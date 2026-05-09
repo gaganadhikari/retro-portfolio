@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gagan Adhikari | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Floating corner icons -->
+  <div class="corner-icon top-left" id="infoBtn" title="Info">i</div>
+  <div class="corner-icon top-right" id="plusBtn" title="More">+</div>
+
+  <!-- Info Modal -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-box pixel-box">
+      <h2>INFO</h2>
+      <p>This portfolio is built in the classic Game Boy Green-Scale pixel art style.</p>
+      <p>Navigate using the sidebar buttons to explore sections.</p>
+      <button class="pixel-btn" onclick="closeModal('infoModal')">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- Main wrapper -->
+  <div class="screen-wrapper">
+
+    <!-- Speech bubble + sprite -->
+    <div class="speech-area">
+      <div class="sprite" id="sprite">
+        <svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pixel sprite character -->
+          <rect x="5" y="0" width="6" height="2" fill="#081820"/>
+          <rect x="4" y="2" width="8" height="4" fill="#306230"/>
+          <rect x="3" y="3" width="2" height="2" fill="#8bac0f"/>
+          <rect x="11" y="3" width="2" height="2" fill="#8bac0f"/>
+          <rect x="4" y="6" width="8" height="3" fill="#8bac0f"/>
+          <rect x="3" y="9" width="10" height="4" fill="#306230"/>
+          <rect x="2" y="10" width="2" height="3" fill="#306230"/>
+          <rect x="12" y="10" width="2" height="3" fill="#306230"/>
+          <rect x="4" y="13" width="3" height="3" fill="#081820"/>
+          <rect x="9" y="13" width="3" height="3" fill="#081820"/>
+        </svg>
+      </div>
+      <div class="speech-bubble pixel-box">Hello!<br/>Welcome to my web<br/>portfolio.</div>
+    </div>
+
+    <!-- Main interface -->
+    <div class="main-interface">
+
+      <!-- Left panel: Profile card + nav -->
+      <div class="left-panel">
+
+        <!-- Nav buttons -->
+        <nav class="sidebar-nav">
+          <button class="nav-btn active" data-section="bio">
+            <span class="nav-icon">
+              <!-- Person SVG -->
+              <svg width="20" height="20" viewBox="0 0 16 16"><rect x="6" y="1" width="4" height="4" fill="currentColor"/><rect x="5" y="5" width="6" height="2" fill="currentColor"/><rect x="3" y="7" width="10" height="6" fill="currentColor"/><rect x="4" y="13" width="3" height="3" fill="currentColor"/><rect x="9" y="13" width="3" height="3" fill="currentColor"/></svg>
+            </span>
+            Bio
+          </button>
+          <button class="nav-btn" data-section="skills">
+            <span class="nav-icon">
+              <!-- Star SVG -->
+              <svg width="20" height="20" viewBox="0 0 16 16"><rect x="7" y="0" width="2" height="3" fill="currentColor"/><rect x="5" y="3" width="6" height="2" fill="currentColor"/><rect x="1" y="5" width="14" height="2" fill="currentColor"/><rect x="3" y="7" width="10" height="2" fill="currentColor"/><rect x="2" y="9" width="4" height="5" fill="currentColor"/><rect x="10" y="9" width="4" height="5" fill="currentColor"/><rect x="6" y="10" width="4" height="2" fill="currentColor"/></svg>
+            </span>
+            Skills
+          </button>
+          <button class="nav-btn" data-section="experience">
+            <span class="nav-icon">
+              <!-- Space Invader SVG -->
+              <svg width="20" height="20" viewBox="0 0 16 16"><rect x="2" y="0" width="2" height="2" fill="currentColor"/><rect x="12" y="0" width="2" height="2" fill="currentColor"/><rect x="4" y="2" width="8" height="2" fill="currentColor"/><rect x="2" y="4" width="12" height="2" fill="currentColor"/><rect x="0" y="6" width="16" height="2" fill="currentColor"/><rect x="2" y="8" width="4" height="2" fill="currentColor"/><rect x="10" y="8" width="4" height="2" fill="currentColor"/><rect x="4" y="10" width="3" height="2" fill="currentColor"/><rect x="9" y="10" width="3" height="2" fill="currentColor"/><rect x="0" y="12" width="3" height="2" fill="currentColor"/><rect x="13" y="12" width="3" height="2" fill="currentColor"/></svg>
+            </span>
+            Exp
+          </button>
+          <button class="nav-btn" data-section="contact">
+            <span class="nav-icon">
+              <!-- Envelope SVG -->
+              <svg width="20" height="20" viewBox="0 0 16 16"><rect x="0" y="2" width="16" height="12" fill="currentColor"/><rect x="1" y="3" width="14" height="10" fill="#8bac0f"/><rect x="0" y="2" width="8" height="6" fill="currentColor" opacity="0"/><polygon points="0,2 8,9 16,2" fill="currentColor"/><rect x="1" y="3" width="6" height="5" fill="#8bac0f"/><rect x="9" y="3" width="6" height="5" fill="#8bac0f"/><rect x="5" y="6" width="6" height="3" fill="#8bac0f"/></svg>
+            </span>
+            Contact
+          </button>
+          <button class="nav-btn athlete-btn" data-section="athlete">
+            <span class="nav-icon">
+              <!-- Bicycle / Running SVG -->
+              <svg width="20" height="20" viewBox="0 0 16 16"><rect x="1" y="8" width="4" height="1" fill="currentColor"/><rect x="11" y="8" width="4" height="1" fill="currentColor"/><rect x="0" y="9" width="2" height="2" fill="currentColor"/><rect x="14" y="9" width="2" height="2" fill="currentColor"/><rect x="0" y="11" width="2" height="2" fill="currentColor"/><rect x="14" y="11" width="2" height="2" fill="currentColor"/><rect x="1" y="13" width="4" height="1" fill="currentColor"/><rect x="11" y="13" width="4" height="1" fill="currentColor"/><rect x="5" y="5" width="6" height="1" fill="currentColor"/><rect x="7" y="5" width="2" height="8" fill="currentColor"/><rect x="5" y="9" width="6" height="1" fill="currentColor"/><rect x="3" y="4" width="2" height="2" fill="currentColor"/><rect x="4" y="2" width="2" height="2" fill="currentColor"/></svg>
+            </span>
+            Athlete
+          </button>
+        </nav>
+
+        <!-- Profile card -->
+        <div class="profile-card pixel-box">
+          <div class="avatar-frame">
+            <div class="avatar-art">
+              <!-- Pixel art avatar SVG -->
+              <svg width="100" height="110" viewBox="0 0 50 55" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                <!-- Hair -->
+                <rect x="14" y="2" width="22" height="4" fill="#081820"/>
+                <rect x="12" y="4" width="26" height="6" fill="#081820"/>
+                <rect x="10" y="6" width="4" height="8" fill="#081820"/>
+                <rect x="36" y="6" width="4" height="8" fill="#081820"/>
+                <!-- Face -->
+                <rect x="14" y="10" width="22" height="18" fill="#8bac0f"/>
+                <!-- Eyes -->
+                <rect x="17" y="15" width="4" height="4" fill="#081820"/>
+                <rect x="29" y="15" width="4" height="4" fill="#081820"/>
+                <!-- Glasses -->
+                <rect x="16" y="14" width="6" height="6" fill="none" stroke="#081820" stroke-width="1"/>
+                <rect x="28" y="14" width="6" height="6" fill="none" stroke="#081820" stroke-width="1"/>
+                <rect x="22" y="16" width="6" height="1" fill="#081820"/>
+                <!-- Nose -->
+                <rect x="24" y="20" width="2" height="3" fill="#306230"/>
+                <!-- Beard/Mouth -->
+                <rect x="16" y="24" width="18" height="4" fill="#081820"/>
+                <rect x="18" y="23" width="14" height="2" fill="#306230"/>
+                <!-- Ear -->
+                <rect x="10" y="14" width="4" height="6" fill="#8bac0f"/>
+                <rect x="36" y="14" width="4" height="6" fill="#8bac0f"/>
+                <!-- Neck -->
+                <rect x="20" y="28" width="10" height="4" fill="#8bac0f"/>
+                <!-- Shirt/Body -->
+                <rect x="10" y="32" width="30" height="18" fill="#306230"/>
+                <rect x="6" y="34" width="10" height="14" fill="#306230"/>
+                <rect x="34" y="34" width="10" height="14" fill="#306230"/>
+                <!-- Shirt collar -->
+                <rect x="18" y="32" width="6" height="4" fill="#8bac0f"/>
+                <rect x="26" y="32" width="6" height="4" fill="#8bac0f"/>
+              </svg>
+            </div>
+          </div>
+          <div class="profile-info">
+            <h2 class="profile-name">Gagan<br/>Adhikari</h2>
+            <p class="profile-title">Software Engineer</p>
+          </div>
+        </div>
+
+        <div class="footer-text">© 2026 | gaganadhikari.com.np</div>
+      </div>
+
+      <!-- Right panel: Content window -->
+      <div class="right-panel pixel-box">
+
+        <!-- BIO SECTION -->
+        <div class="section active" id="section-bio">
+          <h1 class="section-title">Bio</h1>
+          <div class="section-content">
+            <p>Born with a passion for building systems, currently creating tomorrow at <span class="highlight">Intuji Pvt Ltd</span>.</p>
+            <br/>
+            <p>I turn complex logic into smooth digital experiences.</p>
+            <br/>
+            <div class="pixel-divider"></div>
+            <br/>
+            <div class="stat-row">
+              <span class="stat-label">▶ NAME</span>
+              <span class="stat-value">Gagan Adhikari</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">▶ ROLE</span>
+              <span class="stat-value">Software Engineer</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">▶ COMPANY</span>
+              <span class="stat-value">Intuji Pvt Ltd</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">▶ BASED IN</span>
+              <span class="stat-value">Nepal</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">▶ STATUS</span>
+              <span class="stat-value blink">● ONLINE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS SECTION -->
+        <div class="section" id="section-skills">
+          <h1 class="section-title">Skills</h1>
+          <div class="section-content">
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h3>▶ BACKEND</h3>
+                <div class="skill-bar-row"><span>Laravel</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+                <div class="skill-bar-row"><span>Node.js</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill-bar-row"><span>PHP</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+                <div class="skill-bar-row"><span>REST APIs</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+              </div>
+              <div class="skill-category">
+                <h3>▶ FRONTEND</h3>
+                <div class="skill-bar-row"><span>Vue.js</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+                <div class="skill-bar-row"><span>React</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+                <div class="skill-bar-row"><span>HTML/CSS</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill-bar-row"><span>JavaScript</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+              </div>
+              <div class="skill-category">
+                <h3>▶ DATABASE</h3>
+                <div class="skill-bar-row"><span>MySQL</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill-bar-row"><span>PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+                <div class="skill-bar-row"><span>Redis</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+                <div class="skill-bar-row"><span>MongoDB</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+              </div>
+              <div class="skill-category">
+                <h3>▶ DEVOPS</h3>
+                <div class="skill-bar-row"><span>Docker</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+                <div class="skill-bar-row"><span>Git/GitHub</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+                <div class="skill-bar-row"><span>Linux/CLI</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+                <div class="skill-bar-row"><span>AWS</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE SECTION -->
+        <div class="section" id="section-experience">
+          <h1 class="section-title">Experience</h1>
+          <div class="section-content">
+            <div class="exp-item pixel-box-inner">
+              <div class="exp-header">
+                <span class="exp-role">Software Engineer</span>
+                <span class="exp-date">Mar 2026 → Now</span>
+              </div>
+              <div class="exp-company">▶ Intuji Pvt Ltd</div>
+              <ul class="exp-desc">
+                <li>Building scalable backend systems</li>
+                <li>Architecting APIs and microservices</li>
+                <li>Driving engineering best practices</li>
+              </ul>
+            </div>
+            <div class="exp-item pixel-box-inner">
+              <div class="exp-header">
+                <span class="exp-role">Senior Engineer</span>
+                <span class="exp-date">2024 → 2026</span>
+              </div>
+              <div class="exp-company">▶ Matat Technologies</div>
+              <ul class="exp-desc">
+                <li>Led backend architecture with Laravel</li>
+                <li>Designed Node.js microservice systems</li>
+                <li>Mentored junior engineers</li>
+              </ul>
+            </div>
+            <div class="exp-item pixel-box-inner">
+              <div class="exp-header">
+                <span class="exp-role">Senior Engineer</span>
+                <span class="exp-date">2022 → 2024</span>
+              </div>
+              <div class="exp-company">▶ Asterdio Inc.</div>
+              <ul class="exp-desc">
+                <li>Full-stack development with Laravel</li>
+                <li>System architecture & optimization</li>
+                <li>REST API design & integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="section" id="section-contact">
+          <h1 class="section-title">Contact</h1>
+          <div class="section-content">
+            <p class="contact-intro">[ Ready to collaborate? ]</p>
+            <br/>
+            <div class="contact-list">
+              <a class="contact-item pixel-box-inner" href="mailto:gagan0adhikari@gmail.com">
+                <span class="contact-icon">✉</span>
+                <span>gagan0adhikari@gmail.com</span>
+              </a>
+              <a class="contact-item pixel-box-inner" href="https://github.com/gaganadhikari" target="_blank">
+                <span class="contact-icon">◈</span>
+                <span>github.com/gaganadhikari</span>
+              </a>
+              <a class="contact-item pixel-box-inner" href="https://linkedin.com/in/gaganadhikari" target="_blank">
+                <span class="contact-icon">▣</span>
+                <span>linkedin.com/in/gaganadhikari</span>
+              </a>
+              <a class="contact-item pixel-box-inner" href="https://gaganadhikari.com.np" target="_blank">
+                <span class="contact-icon">◉</span>
+                <span>gaganadhikari.com.np</span>
+              </a>
+            </div>
+            <br/>
+            <div class="pixel-divider"></div>
+            <br/>
+            <p class="contact-note blink">▶ INSERT COIN TO CONNECT ◀</p>
+          </div>
+        </div>
+
+        <!-- ATHLETE SECTION -->
+        <div class="section" id="section-athlete">
+          <h1 class="section-title">Athlete</h1>
+          <div class="section-content">
+            <div class="athlete-grid">
+              <!-- PR Records Leaderboard -->
+              <div class="leaderboard pixel-box-inner">
+                <h3>🏆 PR RECORDS</h3>
+                <div class="lb-header">
+                  <span>RANK</span><span>EVENT</span><span>TIME/DIST</span>
+                </div>
+                <div class="lb-row gold">
+                  <span>#1</span><span>5K Run</span><span>22:40</span>
+                </div>
+                <div class="lb-row silver">
+                  <span>#2</span><span>10K Run</span><span>49:15</span>
+                </div>
+                <div class="lb-row bronze">
+                  <span>#3</span><span>Half Marathon</span><span>1:58:30</span>
+                </div>
+                <div class="lb-row">
+                  <span>#4</span><span>Longest Ride</span><span>120 km</span>
+                </div>
+                <div class="lb-row">
+                  <span>#5</span><span>Elevation Gain</span><span>3200 m</span>
+                </div>
+              </div>
+
+              <!-- Favorite Rides/Runs -->
+              <div class="fav-routes pixel-box-inner">
+                <h3>🚴 FAVORITE RIDES</h3>
+                <div class="route-item">
+                  <span class="route-name">The Himalayan Climb</span>
+                  <div class="route-details">
+                    <span>120km</span> · <span>3200m↑</span> · <span>★★★★★</span>
+                  </div>
+                </div>
+                <div class="route-item">
+                  <span class="route-name">Nagarkot Loop</span>
+                  <div class="route-details">
+                    <span>65km</span> · <span>1800m↑</span> · <span>★★★★☆</span>
+                  </div>
+                </div>
+                <div class="route-item">
+                  <span class="route-name">Kathmandu Valley Ride</span>
+                  <div class="route-details">
+                    <span>45km</span> · <span>900m↑</span> · <span>★★★★☆</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Favorite Runs -->
+              <div class="fav-runs pixel-box-inner">
+                <h3>🏃 FAVORITE RUNS</h3>
+                <div class="route-item">
+                  <span class="route-name">Shivapuri Trail Run</span>
+                  <div class="route-details">
+                    <span>12km</span> · <span>Trail</span> · <span>★★★★★</span>
+                  </div>
+                </div>
+                <div class="route-item">
+                  <span class="route-name">Early Morning 5K</span>
+                  <div class="route-details">
+                    <span>5km</span> · <span>Road</span> · <span>★★★★☆</span>
+                  </div>
+                </div>
+                <div class="route-item">
+                  <span class="route-name">Lakeside Pokhara Run</span>
+                  <div class="route-details">
+                    <span>8km</span> · <span>Scenic</span> · <span>★★★★★</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Athlete Stats -->
+              <div class="athlete-stats pixel-box-inner">
+                <h3>📊 STATS</h3>
+                <div class="stat-row"><span class="stat-label">SPORT</span><span class="stat-value">Cycling + Running</span></div>
+                <div class="stat-row"><span class="stat-label">YR MILES</span><span class="stat-value">2,400+ km</span></div>
+                <div class="stat-row"><span class="stat-label">ELEVATION</span><span class="stat-value">45,000+ m</span></div>
+                <div class="stat-row"><span class="stat-label">RACES</span><span class="stat-value">8 completed</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end right-panel -->
+    </div><!-- end main-interface -->
+  </div><!-- end screen-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
+
